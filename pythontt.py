@@ -321,3 +321,328 @@ if duplicate:
     print("Duplicate Found")
 else:
     print("No Duplicate")
+
+#35
+t = int(input())
+for i in range(0,t):
+    a,b = map(int,input().split())
+    print(a+b)
+
+#36
+t = int(input())
+for i in range(0,t):
+    a,b = map(int,input().split())
+    print(a%b)
+#37
+    n=int(input())
+for i in range(0,n):
+    N=int(input())
+    l=list(map(int,input().split()))
+    r=list(map(int,input().split()))
+    s=[]
+    a=[]
+    for j in range(0,N):
+        s.append(l[j]*r[j])
+    for k in range(0,N):
+        if(s[k]==max(s)):
+            a.append(r[k])
+    ma=max(a)
+    for k in range(0,N):
+        if(r[k]==ma):
+            print(k+1)
+            break
+#38
+(n, k) = map(int, input().split())
+
+ans = 0
+
+for i in range(n):
+	x = int(input())
+	if x % k == 0:
+		ans += 1
+
+print(ans)	
+#39
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    print(int(n**0.5))
+#40
+t=int(input())
+for _ in range(t):
+    n=input()
+    total=0
+    for ch in n:
+        total += int(ch)
+    print(total)
+#41
+x,y = map(int,input().split())
+if y > x:
+    print("Yes")
+else:
+    print("No")
+#42
+x,y = map(int,input().split())
+if x >= 2*y:
+    print("Yes")
+else:
+    print("No")
+#43
+    a,b = map(int,input().split())
+if a+b+(a*b) == 111:
+    print("Yes")
+else:
+    print("No")
+#44
+    n,a,b = map(int,input().split())
+rated_users = n - a 
+high_rated_users = rated_users - b
+print(rated_users,high_rated_users)
+#45
+n = int(input())
+cell=(n*n) // 2
+print(cell)
+#46
+a,b = map(int,input().split())
+sum_val = a+b
+prod_val = a*b
+ans=prod_val - sum_val
+print(abs(ans))
+#47
+t=int(input())
+listsal=[]
+sal=0
+hra=0
+da=0
+gross=0
+for _ in range(t):
+    sal=int(input())
+    listsal.append(sal)
+for salary in listsal:
+    if(salary<1500):
+        hra=(10*salary)/100
+        da=(90*salary)/100
+    elif(salary>=1500):
+        hra=500
+        da=(98*salary)/100
+    gross=salary+hra+da
+    print(gross)
+#48
+    t=int(input())
+for _ in range(t):
+    a,b,c = list(map(int,input().split()))
+    if (a+b+c) == 180:
+        print("YES")
+    else:
+        print("NO")
+#49
+        t=int(input())
+for _ in range(t):
+    h,c,t=list(map(float,input().split()))
+    if(h>50 and c<0.7 and t>5600):
+        print(10)
+    elif(h>50 and c<0.7):
+        print(9)
+    elif(c<0.7 and t>5600):
+        print(8)
+    elif(h>50 and t>5600):
+        print(7)
+    elif(h>50 or c<0.7 or t>5600):
+        print(6)
+    elif not(h>50 or c<0.7 or t>5600):
+        print(5)
+#50
+t=int(input())
+inp=""
+listv=[]
+for _ in range(t):
+    inp=input()
+    listv.append(inp)
+for it in listv:
+    if(it=='b' or it=='B'):
+        print("BattleShip")
+    if(it=='C' or it=='c'):
+        print("Cruiser")
+    if(it=='D' or it=='d'):
+        print("Destroyer")
+    if(it=='f' or it=='F'):
+        print("Frigate")
+
+#51
+t=int(input())
+for _ in range(t):
+    quantity, price = map(int, input().split())
+    total = quantity*price
+    if quantity > 1000 :
+        total = total - (0.10 * total )
+    print(f"{total:.6f}")
+#52
+t=int(input())
+for _ in range(t):
+    A,B,C = map(int,input().split())
+    numbers = [A ,B,C]
+    numbers.sort()
+    print(numbers[1])
+#53
+n=int(input())
+ready=0
+notready=0
+num=list(map(int,input().split()))
+for i in num:
+    if(i%2==0):
+        ready+=1
+    else:
+        notready+=1
+if n==1:
+    print("READY FOR BATTLE")
+elif(ready>notready):
+    print("READY FOR BATTLE")
+else:
+    print("NOT READY")
+#54
+t=int(input())
+for _ in range(t):
+    n=input()
+    reverse=n[::-1]
+    print(int(reverse))
+#55
+t=int(input())
+for _ in range(t):
+    n=input()
+    if n == n[::-1]:
+        print("wins")
+    else:
+        print("loses")
+#56
+t=int(input())
+for _ in range(t):
+    n=input()
+    count=0
+    for i in n:
+        if i == '4':
+            count+=1
+    print(count)
+#57
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    fact=1
+    for i in range(1,n+1):
+        fact*=i
+    print(fact)
+#58
+while True:
+    n=int(input())
+    if n==42:
+        break
+    print(n)
+#59
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    s=input()
+    count_a=s.count('a')
+    count_b=s.count('b')
+    print(count_a,count_b)
+#60
+t=int(input())
+for _ in range(t):
+    X,Y,K,N=list(map(int,input().split()))
+    req_pages=X-Y
+    found= False
+    for _ in range(N):
+        P, C = map(int, input().split())
+        if P >= req_pages and C <= K:
+            found = True
+    if found:
+        print("LuckyChef")
+    else:
+        print("UnluckyChef")
+#61
+N = int(input())
+
+score_1 = 0
+score_2 = 0
+max_lead = 0
+winner = 0
+
+for _ in range(N):
+
+    s1, s2 = map(int, input().split())
+    
+
+    score_1 += s1
+    score_2 += s2
+    
+
+    if score_1 > score_2:
+        lead = score_1 - score_2
+        current_winner = 1
+    else:
+        lead = score_2 - score_1
+        current_winner = 2
+    
+
+    if lead > max_lead:
+        max_lead = lead
+        winner = current_winner
+
+print(winner, max_lead)
+#62
+t=int(input())
+for _ in range(t):
+    N, K = map(int,input().split())
+    values=list(map(int,input().split()))
+    count=0
+    for value in values:
+        if (value + K) % 7 == 0 :
+            count+=1
+    print(count)
+#63
+K, N = map(int, input().split())
+
+favorites = [input().strip() for _ in range(K)]
+
+for _ in range(N):
+    found_string = input().strip()
+
+    if len(found_string) >= 47:
+        print("Good")
+    else:
+
+        is_good = any(fav in found_string for fav in favorites)
+        print("Good" if is_good else "Bad")
+#64
+        T = int(input())
+for _ in range(T):
+    N, M = map(int, input().split())
+    alice_numbers = set(map(int, input().split()))
+    berta_numbers = set(map(int, input().split()))
+    common_numbers = alice_numbers.intersection(berta_numbers)
+    print(len(common_numbers))
+#65
+
+T = int(input())
+results = []
+for _ in range(T):
+    N = int(input())
+    arr = list(map(int, input().split()))
+    if N < 7:
+        results.append("no")
+        continue
+    left, right, expected_num = 0, N - 1, 1
+    is_rainbow = True
+    while left <= right:
+        if arr[left] != arr[right] or arr[left] < 1 or arr[left] > 7:
+            is_rainbow = False
+            break
+        if arr[left] != expected_num:
+            if arr[left] == expected_num + 1:
+                expected_num += 1
+            else:
+                is_rainbow = False
+                break
+        left += 1
+        right -= 1
+    results.append("yes" if is_rainbow and expected_num == 7 else "no")
+print("\n".join(results))
