@@ -721,3 +721,49 @@ print("Total Bill:", total_bill)
 print("Costliest Item:", costliest_item)
 print("Discounted Bill:", int(discounted_bill))
 
+#71
+patient = input("Name: ")
+n = int(input("temperature readings: "))
+temperatures = []
+for i in range(n):
+    temp = float(input("Enter temperature: "))
+    temperatures.append(temp)
+highest = temperatures[0]
+lowest = temperatures[0]
+abnormal = 0
+for temp in temperatures:
+    if temp > highest:
+        highest = temp
+    if temp < lowest:
+        lowest = temp
+    if temp > 100:
+        abnormal += 1
+print("Highest Temperature:", highest)
+print("Lowest Temperature:", lowest)
+print("Abnormal Readings:", abnormal)
+
+#72
+booked = [1, 3, 5, 7, 10, 15]
+print("Total Booked Seats:", len(booked))
+available = []
+for seat in range(1, 21):
+    if seat not in booked:
+        available.append(seat)
+print("Available Seats:")
+print(available)
+
+#73
+attendance = [85, 70, 92, 65, 78, 88]
+highest = attendance[0]
+lowest = attendance[0]
+eligible = 0
+for a in attendance:
+    if a > highest:
+        highest = a
+    if a < lowest:
+        lowest = a
+    if a >= 75:
+        eligible += 1
+print("Highest Attendance:", highest)
+print("Lowest Attendance:", lowest)
+print("Eligible Students:", eligible)
