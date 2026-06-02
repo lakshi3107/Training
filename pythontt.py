@@ -646,3 +646,78 @@ for _ in range(T):
         right -= 1
     results.append("yes" if is_rainbow and expected_num == 7 else "no")
 print("\n".join(results))
+
+#66
+name = input("Student Name: ")
+marks = list(map(int, input("Enter marks: ").split()))
+total = sum(marks)
+average = total / len(marks)
+highest = max(marks)
+status = "Pass"
+for i in marks:
+    if i < 35:
+        status = "Fail"
+        break
+print("Total:", total)
+print("Average:", average)
+print("Highest Mark:", highest)
+print("Status:", status)
+
+#67
+name = input("Employee Name: ")
+scores = list(map(int, input("Enter scores: ").split()))
+best = max(scores)
+avg = sum(scores) / len(scores)
+count = 0
+for i in scores:
+    if i > 80:
+        count += 1
+print("Best Score:", best)
+print("Average Score:", round(avg, 1))
+print("Months Above 80:", count)
+
+#68
+vehicles = [101, 105, 110, 101, 115, 105]
+duplicates = []
+for i in vehicles:
+    if vehicles.count(i) > 1 and i not in duplicates:
+        duplicates.append(i)
+unique = []
+for i in vehicles:
+    if i not in unique:
+        unique.append(i)
+print("Duplicate Vehicles:", duplicates)
+print("Unique Vehicles:", len(unique))
+
+#69
+player = input("Player: ")
+scores = list(map(int, input("Enter scores: ").split()))
+highest = max(scores)
+lowest = min(scores)
+average = sum(scores) / len(scores)
+half_centuries = 0
+for i in scores:
+    if i >= 50:
+        half_centuries += 1
+print("Highest Score:", highest)
+print("Lowest Score:", lowest)
+print("Average Score:", round(average, 1))
+print("Half Centuries:", half_centuries)
+
+#70
+prices = [1200, 3500, 800, 1500]
+total_bill = 0
+for price in prices:
+    total_bill += price
+costliest_item = prices[0]
+for price in prices:
+    if price > costliest_item:
+        costliest_item = price
+if total_bill > 5000:
+    discounted_bill = total_bill - (total_bill * 15 / 100)
+else:
+    discounted_bill = total_bill
+print("Total Bill:", total_bill)
+print("Costliest Item:", costliest_item)
+print("Discounted Bill:", int(discounted_bill))
+
