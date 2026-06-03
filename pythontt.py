@@ -767,3 +767,85 @@ for a in attendance:
 print("Highest Attendance:", highest)
 print("Lowest Attendance:", lowest)
 print("Eligible Students:", eligible)
+
+#74
+#second largest number without sort
+numbers = [12, 45,  23, 89, 67]
+largest = numbers[0]
+second = numbers[0]
+for i in numbers:
+    if i > largest:
+        second = largest
+        largest = i
+    elif i > second and i != largest:
+        second = i
+print("Second Largest:",second)
+
+#75
+s = "swiss"
+for ch in s:
+    if s.count(ch) == 1:
+        print("unique:", ch)
+        break
+		
+#76
+L = [1,2,3,4,5]
+k=2
+result = L[-k:] + L[:-k]
+print(result)
+
+#78
+numbers = [7, 2, 5, 4, 9, 8]
+result = []
+for i in numbers:
+    if i % 2 == 0:
+        result.append(i)
+for i in numbers:
+    if i % 2 != 0:
+        result.append(i)
+print(result)
+
+#79
+s = input()
+for ch in "aeiouAEIOU":
+    s = s.replace(ch, "")
+print("Consonants:", s)
+print("Length", len(s))
+
+#80
+arr = [2, 7, 11, 15, 3, 6]
+tar = 9
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] + arr[j] == tar:
+            print("(", arr[i], ",", arr[j], ")", sep="")
+
+#81
+L = [1, [2, 3], [4, [5, 6]]]
+total = L[0] + L[1][0] + L[1][1] + L[2][0] + L[2][1][0] + L[2][1][1]
+print(total)
+
+#82
+x=[1,[2,3],[4,[5,6]]]
+t=0
+for i in x:
+  if isinstance(i, list):
+    for j in i:
+      if isinstance(j, list):
+        for k in j:
+          t += k
+      else:
+        t += j
+  else:
+    t += i
+print(t)
+
+#83
+for i in range(1, 101):
+    if i < 10:
+        print(i, end=" ")
+    else:
+        a = i // 10
+        b = i % 10
+        if a + b == a * b:
+            print(i, end=" ")
